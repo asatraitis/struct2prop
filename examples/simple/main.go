@@ -8,8 +8,8 @@ import (
 )
 
 type Location struct {
-	X float32  `json:"x"description:"horizontal value"`
-	Y float32  `json:"y"description:"vertical value"`
+	X float32  `json:"x" description:"horizontal value"`
+	Y float32  `json:"y" description:"vertical value"`
 	Z []string `description:"slice"`
 }
 
@@ -19,6 +19,6 @@ func main() {
 		panic(err)
 	}
 
-	b, err := json.MarshalIndent(prop, "", "  ")
+	b, _ := json.MarshalIndent(prop, "", "  ")
 	fmt.Println(string(b))
 }
